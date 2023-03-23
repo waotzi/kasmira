@@ -10,6 +10,21 @@ export default (slot: string) => `
         <link rel="stylesheet" href="/public/style.css">
     </head>
     <body>
-      ${slot}
+      <header>
+        <h1><a href="/">Kasmira</a></h1>
+      </header>
+      <nav>
+          <ul>
+              <li>
+              </li>
+          </ul>
+          <ul>
+              <li>
+              </li>
+          </ul>
+      </nav>
+      <main>
+        ${slot}
+      </main>
     </body>
 </html>`

@@ -64,14 +64,19 @@ button:hover {
 
 /* Header */
 header {
+  border-radius: 0.5rem 0.5rem 0 0;
   background-color: #558b2f;
-  color: #fff;
   padding: 20px;
 }
 
 header h1 {
   font-size: 40px;
   margin: 0;
+}
+
+header a {
+  color: #fff;
+  border-bottom: none;
 }
 
 /* Navigation */
@@ -110,4 +115,5 @@ main {
     background-color: #d7e9cc;
     min-height: 70vh;
     padding: 1rem;
+    border-radius: 0 0 0.5rem 0.5rem;
 }
