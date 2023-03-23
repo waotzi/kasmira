@@ -1,7 +1,11 @@
 import { Elysia } from 'elysia'
+import { html } from '@elysiajs/html'
+import { staticPlugin } from '@elysiajs/static'
+import home from './pages/home'
 
-const app = new Elysia()
-    .get('/', () => 'Hello Elysia')
-    .listen(3000)
-
-console.log(`🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`)
+new Elysia()
+    .use(html())
+    .use(staticPlugin())
+    .get('/', () => home)
+    .get('/html', ({ html }) => html(home))
+    .listen(8080)
