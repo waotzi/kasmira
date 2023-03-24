@@ -10,6 +10,7 @@ export default (slot: string) => `
         <meta name="author" content="waotzi">    
         <link rel="stylesheet" href="/public/style.css">
         <link rel="icon" type="image/png" href="/public/favicon.png" />
+        <script defer data-domain="kasmira.net" src="/js/script.js"></script>
     </head>
     <body>
       <header>
