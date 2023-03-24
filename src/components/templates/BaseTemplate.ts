@@ -13,9 +13,9 @@ export default (slot: string) => `
     </head>
     <body>
       <header>
-        <a href="/" class="logo">
-          <span class="logo-image"></span>
-          <h1>asmira</h1>
+        <img width="128" src="/public/logo.png"/>
+        <a href="/">
+          <h1>Kasmira</h1>
         </a>
       </header>
       <nav>

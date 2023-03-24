@@ -39,7 +39,7 @@ a {
 }
 
 a:hover {
-  color: #8ebf73;
+  color: #81c784;
   border-bottom: none;
 }
 
@@ -66,6 +66,7 @@ header {
   display: flex;
   align-items: center;
   margin: auto;
+  flex-direction: column;
   justify-content: center;
 }
 
@@ -77,26 +78,6 @@ header h1 {
 header a {
   color: #fff;
   border-bottom: none;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-}
-
-
-.logo-image {
-  display: block;
-  position: relative;
-  width: 62px;
-  height: 62px;
-  background-image: url('/public/logo.png');
-  background-size: cover;
-}
-
-
-.logo:hover .logo-image {
-  background-image: url('/public/logo-hover.png');
 }
 
 
