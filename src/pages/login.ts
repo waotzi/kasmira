@@ -2,7 +2,7 @@
 import Input from '../components/atoms/Input'
 import BaseTemplate from '../components/templates/BaseTemplate';
 
-const template = BaseTemplate(`
+const form = `
   <div class="form">
     <h1>Login</h1>
     <p>Please login with your email and password or connect with Metamask.</p>
@@ -12,7 +12,8 @@ const template = BaseTemplate(`
       <button type="submit">Login</button>
     </form>
   </div>
-`);
+`;
+
+const template = BaseTemplate(form);
 
 export default template;
-

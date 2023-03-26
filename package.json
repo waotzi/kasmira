@@ -8,6 +8,7 @@
   "dependencies": {
     "@elysiajs/html": "^0.1.0",
     "@elysiajs/static": "^0.3.0",
+    "bunorm": "^0.0.1",
     "elysia": "latest"
   },
   "devDependencies": {
