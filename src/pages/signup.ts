@@ -1,7 +1,8 @@
+import SignUp from '../components/molecules/SignUp'
 import BaseTemplate from '../components/templates/BaseTemplate'
 
 const template = BaseTemplate(`
-    <p>Please <a href="/login">login</a> or <a href="/signup">signup</a>.</p>
+  ${SignUp()}
 `);
 
 export default template;

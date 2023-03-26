@@ -3,8 +3,7 @@ export default (slot: string) => `
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=devic
-        e-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Kasmira</title>
         <meta name="description" content="manage your kas portfolio">
         <meta name="author" content="waotzi">    
@@ -14,8 +13,8 @@ export default (slot: string) => `
     </head>
     <body>
       <header>
-        <img width="128" src="/public/logo.png"/>
         <a href="/">
+          <img width="128" src="/public/logo.png"/>
           <h1>Kasmira</h1>
         </a>
       </header>
@@ -25,8 +24,8 @@ export default (slot: string) => `
               </li>
           </ul>
           <ul>
-              <li>
-              </li>
+              <li><a href="/login">Login</a></li>
+              <li><a href="/signup">Signup</a></li>
           </ul>
       </nav>
       <main>
