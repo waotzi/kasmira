@@ -61,54 +61,38 @@ button:hover {
 
 
 /* Header */
-header a {
-  border-radius: 0.5rem 0.5rem 0 0;
+header {
   background-color: #558b2f;
-  padding: 20px;
+  border-radius: 0.5rem 0.5rem 0 0;
   display: flex;
-  align-items: center;
-  margin: auto;
-  flex-direction: column;
-  justify-content: center;
-}
-header a:hover {
-  color: #90EE90;
-}
+  justify-content: space-between;
 
-header h1 {
-  font-size: 40px;
-  margin: 0;
 }
 
 header a {
   color: #fff;
   border-bottom: none;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.5rem;
 }
+header a:hover {
+  color: #90EE90;
+}
+
 
 
 /* Navigation */
 nav {
   background-color: #81c784;
-  padding: 10px;
   display: flex;
   justify-content: space-between;
-}
-
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-nav li {
-  display: inline-block;
-  margin: 0 10px;
 }
 
 nav a {
   color: #fff;
   text-decoration: none;
-  padding: 5px 10px;
 }
 
 nav a:hover {

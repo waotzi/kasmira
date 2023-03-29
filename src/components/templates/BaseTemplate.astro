@@ -1,0 +1,38 @@
+---
+export interface Props {
+	title?: string;
+}
+
+const { title } = Astro.props;
+
+---
+
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="generator" content={Astro.generator} />
+        <title>Kasmira {title}</title>
+        <meta name="description" content="manage your kas portfolio">
+        <meta name="author" content="waotzi">    
+        <link rel="stylesheet" href="/styles/global.css" />
+        <link rel="icon" type="image/png" href="/favicon.png" />
+        <script defer data-domain="kasmira.net" src="/js/script.js"></script>
+        <script src="/public/js/detect-provider.js"></script>
+        <script src="/public/js/metamask-connect.js"></script>
+    </head>
+    <body>
+      <header>
+        <a href="/" >
+          <img width="48" src="/public/logo.png"/>
+          <span>Kasmira</span>
+        </a>
+        <button id="connect-metamask">Connect to Metamask</button>
+      </header>
+      <main>
+        <slot/>
+      </main>
+    </body>
+</html>
+
