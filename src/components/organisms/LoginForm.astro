@@ -2,15 +2,16 @@
 
 export interface Props {
 	title?: string;
+    actionUrl?: string;
 }
 
-const { title } = Astro.props;
+const { title, actionUrl } = Astro.props;
 
 ---
 
 <div class="login-page">
     <div class="login-form-container">
-    <form>
+    <form action={actionUrl} method="POST">
         <h2>{title}</h2>
         <slot/>
     </form>

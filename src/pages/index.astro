@@ -4,36 +4,63 @@ import Card from '../components/atoms/Card.astro';
 ---
 
 <BaseTemplate>
-	<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-	<p class="instructions">
-		To get started, open the directory <code>src/pages</code> in your project.<br />
-		<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-	</p>
-	<ul role="list" class="link-card-grid">
-		<Card
-			href="https://docs.astro.build/"
-			title="Documentation"
-			body="Learn how Astro works and explore the official API docs."
-		/>
-		<Card
-			href="https://astro.build/integrations/"
-			title="Integrations"
-			body="Supercharge your project with new frameworks and libraries."
-		/>
-		<Card
-			href="https://astro.build/themes/"
-			title="Themes"
-			body="Explore a galaxy of community-built starter themes."
-		/>
-		<Card
-			href="https://astro.build/chat/"
-			title="Community"
-			body="Come say hi to our amazing Discord community. ❤️"
-		/>
-	</ul>
+	<h1>Welcome to <span class="text-gradient">Kasmira</span></h1>
+	<subtitle>Fund Your Creative Projects and Ideas with Kasmira</subtitle>
+
+	<div class="instructions">
+		<p>Kasmira is a powerful platform designed for creators, artists, and entrepreneurs who are looking for a new way to fund their projects and ideas. With Kasmira, you can easily create a crypto portfolio with your public donation keys, generate QR codes, and start accepting donations from supporters all around the world.</p>
+		<details>
+			<summary>Read More</summary>
+			<p>Whether you're a musician, artist, writer, or anyone with a creative vision, Kasmira makes it easy to share your work and engage with your community. You can sign up for Kasmira and create your own personal page that you can easily embed into your own website or share on social media.</p>
+			<p>We also provide a variety of widgets and other tools that make it easy to accept donations and support your projects. With Kasmira, you can focus on your creative work and leave the fundraising to us. So why wait? Sign up for Kasmira today and start turning your creative ideas into reality!</p>
+			<div class="cta">
+				<a href="/signup" class="button">Sign Up Now</a>
+			</div>
+		</details>
+		
+	</div>
+	<div class="projects-section">
+		<h2>Explore Projects and Users on Kasmira</h2>
+		<ul role="list" class="link-card-grid">
+			<Card
+				href="https://docs.astro.build/"
+				title="Documentation"
+				body="Learn how Astro works and explore the official API docs."
+			/>
+			<Card
+				href="https://astro.build/integrations/"
+				title="Integrations"
+				body="Supercharge your project with new frameworks and libraries."
+			/>
+			<Card
+				href="https://astro.build/themes/"
+				title="Themes"
+				body="Explore a galaxy of community-built starter themes."
+			/>
+			<Card
+				href="https://astro.build/chat/"
+				title="Community"
+				body="Come say hi to our amazing Discord community. ❤️"
+			/>
+		</ul>
+	</div>
 </BaseTemplate>
 
 <style>
+	summary {
+		text-align: center;
+		cursor: pointer;
+	}
+	.cta {
+        text-align: center;
+    }
+	subtitle {
+        display: block;
+        font-size: 1.5rem;
+        color: #333;
+        text-align: center;
+        margin-bottom: 2rem;
+      }
 	.text-gradient {
 		background-image: var(--accent-gradient);
 		-webkit-background-clip: text;
