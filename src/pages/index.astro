@@ -5,7 +5,7 @@ import Card from '../components/atoms/Card.astro';
 
 <BaseTemplate>
 	<h1>Welcome to <span class="text-gradient">Kasmira</span></h1>
-	<subtitle>Fund Your Creative Projects and Ideas with Kasmira</subtitle>
+	<subtitle class="subtitle">Fund Your Creative Projects and Ideas with Kasmira</subtitle>
 
 	<div class="instructions">
 		<p>Kasmira is a powerful platform designed for creators, artists, and entrepreneurs who are looking for a new way to fund their projects and ideas. With Kasmira, you can easily create a crypto portfolio with your public donation keys, generate QR codes, and start accepting donations from supporters all around the world.</p>
@@ -54,7 +54,7 @@ import Card from '../components/atoms/Card.astro';
 	.cta {
         text-align: center;
     }
-	subtitle {
+	.subtitle {
         display: block;
         font-size: 1.5rem;
         color: #333;
@@ -86,11 +86,5 @@ import Card from '../components/atoms/Card.astro';
 	}
 	.instructions strong {
 		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
 	}
 </style>

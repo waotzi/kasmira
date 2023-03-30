@@ -2,7 +2,7 @@
 export interface Props {
 	title: string;
 	body: string;
-	href: string;
+	href?: string;
 }
 
 const { href, title, body } = Astro.props;
@@ -21,8 +21,12 @@ const { href, title, body } = Astro.props;
 </li>
 <style>
 	.link-card {
+		width: 100%;
+
+		cursor: pointer;
 		list-style: none;
 		display: flex;
+		word-wrap: break-word;
 		padding: 0.25rem;
 		background-color: white;
 		background-image: none;
@@ -34,11 +38,11 @@ const { href, title, body } = Astro.props;
 	}
 
 	.link-card > a {
-		width: 100%;
+		overflow: hidden;
 		text-decoration: none;
 		line-height: 1.4;
-		padding: 1rem 1.3rem;
 		border-radius: 0.35rem;
+		padding: 1rem;
 		color: #111;
 		background-color: white;
 		opacity: 0.8;
