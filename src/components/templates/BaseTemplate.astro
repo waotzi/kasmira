@@ -1,9 +1,29 @@
 ---
-export interface Props {
-	title?: string;
-}
+import { verify } from 'jsonwebtoken';
 
-const { title } = Astro.props;
+const secretKey = import.meta.env.JWT_SECRET_KEY;
+
+// Retrieve the token from the local storage
+const token = localStorage.getItem('token');
+
+let isLoggedIn = false;
+let username = null
+
+if (token) {
+  try {
+    // Verify the token using the secret key
+    const decoded = verify(token, secretKey);
+    username = decoded.username
+    isLoggedIn = true;
+
+  } catch (error) {
+    // The token is invalid or has expired
+    console.error('Invalid or expired token:', error.message);
+  }
+} else {
+  // The user is not logged in
+  console.log('User is not logged in');
+}
 
 ---
 
@@ -27,9 +47,20 @@ const { title } = Astro.props;
           <span>Kasmira</span>
         </a>
         <nav>
-          <a href="/login" class="btn btn-primary">Log In</a>
-          <a href="/signup" class="btn btn-secondary">Sign Up</a>
+          {isLoggedIn ? (
+            <div class="jungle-welcome">
+              <p>Welcome, {username}!</p>
+              <a href="/signout" class="btn btn-secondary">Sign Out</a>
+
+            </div>
+          ) : (
+            <>
+              <a href="/signup" class="btn btn-secondary">Sign Up</a>
+              <a href="/login" class="btn btn-primary">Log In</a>
+            </>
+          )}
         </nav>
+        
       </header>
       <main>
         <slot/>
@@ -42,3 +73,19 @@ const { title } = Astro.props;
     </body>
 </html>
 
+
+
+<style>
+  .jungle-welcome {
+    display: flex;
+    align-items: center;
+  }
+
+  .jungle-welcome p {
+    margin-right: 8px;
+    font-size: 18px;
+    color: #fff;
+    text-shadow: 1px 1px #000;
+  }
+
+</style>

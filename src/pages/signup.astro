@@ -6,7 +6,7 @@ const url = Astro.url
 ---
 
 <BaseTemplate>
-  <LoginForm title="Sign up" actionUrl="/signup.json">
+  <LoginForm title="Sign up" actionUrl="/auth.json">
     <label for="username">Username</label>
     <input type="text" id="username" name="username" required>
     <label for="password">Password</label>
@@ -17,22 +17,12 @@ const url = Astro.url
       <p class="error-message">
         Passwords do not match.
       </p>
-      }
+    }
+    { url.searchParams.get("error") === 'username_taken' &&
+      <p class="error-message">
+        Username is taken.
+      </p>
+    }
     <button type="submit" class="login-btn">Sign up</button>
   </LoginForm>
 </BaseTemplate>
-
-<style>
-  .error-message {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #FF6347;
-  color: #FFFFFF;
-  font-size: 1.2rem;
-  font-weight: bold;
-  padding: 10px;
-  margin-bottom: 20px;
-  border-radius: 5px;
-}
-</style>
