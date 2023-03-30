@@ -87,7 +87,6 @@ header a {
   display: flex;
   align-items: center;
   font-weight: bold;
-  font-size: 1.5rem;
 }
 header a:hover {
   color: #90EE90;
@@ -111,40 +110,6 @@ h1 {
 }
 
 /* Jungle themed input fields */
-.jungle-input {
-  position: relative;
-  display: inline-block;
-  margin: 10px;
-  width: 300px;
-}
-
-.jungle-input label {
-  position: absolute;
-  top: 0;
-  color: #165a2e;
-  font-weight: bold;
-  font-size: 16px;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
-}
-
-.jungle-input input {
-  width: 100%;
-  padding: 10px;
-  margin-top: 20px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.5);
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  transition: background-color 0.3s ease;
-}
-
-.jungle-input input:focus {
-  outline: none;
-  background-color: rgba(255, 255, 255, 0.8);
-}
-
-
 form {
   display: flex;
   flex-direction: column;
@@ -155,30 +120,6 @@ form > * {
   margin-bottom: 1rem;
 }
 
-.form {
-  text-align: center;
-}
-.metamask-connect {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  border-radius: 3px;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  margin: auto;
-}
-.metamask-connect img {
-  padding-right: 1rem;
-  width: 1rem;
-}
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
 .btn {
   display: flex;
@@ -247,16 +188,18 @@ button[type="submit"] {
 button[type="submit"]:hover {
   background-color: #3e7521;
 }
-input {  
+
+
+input {
   width: 100%;
   padding: 1rem;
   margin-bottom: 1rem;
-  font-size: 1.2rem;
-  border-radius: 5px;
+  border-radius: 4px;
   border: none;
   background-color: rgba(255, 255, 255, 0.2);
   color: #333;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2) inset;
+  transition: background-color 0.3s ease;
 }
 
 input:placeholder {
@@ -269,6 +212,15 @@ input:focus  {
 }
 
 
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  color: #fff;
+  text-shadow: 1px 1px #000;
+}
+
 .error-message {
   display: flex;
   align-items: center;
@@ -280,4 +232,9 @@ input:focus  {
   padding: 10px;
   margin-bottom: 20px;
   border-radius: 5px;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
 }
