@@ -19,8 +19,6 @@ const { title } = Astro.props;
         <link rel="stylesheet" href="/styles/global.css" />
         <link rel="icon" type="image/png" href="/favicon.png" />
         <script defer data-domain="kasmira.net" src="/js/script.js"></script>
-        <script src="/public/js/detect-provider.js"></script>
-        <script src="/public/js/metamask-connect.js"></script>
     </head>
     <body>
       <header>
@@ -28,7 +26,10 @@ const { title } = Astro.props;
           <img width="48" src="/public/logo.png"/>
           <span>Kasmira</span>
         </a>
-        <button id="connect-metamask">Connect to Metamask</button>
+        <nav>
+          <a href="/login" class="btn btn-primary">Log In</a>
+          <a href="/signup" class="btn btn-secondary">Sign Up</a>
+        </nav>
       </header>
       <main>
         <slot/>

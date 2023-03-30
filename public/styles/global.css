@@ -83,30 +83,20 @@ header a:hover {
 
 
 
-/* Navigation */
-nav {
-  background-color: #81c784;
-  display: flex;
-  justify-content: space-between;
-}
-
-nav a {
-  color: #fff;
-  text-decoration: none;
-}
-
-nav a:hover {
-  color: #fff;
-  background-color: #558b2f;
-}
-
 /* body */
 
 main {
-    background-color: #d7e9cc;
-    min-height: 70vh;
-    padding: 1rem;
-    border-radius: 0 0 0.5rem 0.5rem;
+  background-color: #d7e9cc;
+  min-height: 70vh;
+  padding: 1rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+  margin: auto;
+  padding: 1.5rem;
+}
+h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 0;
 }
 
 /* Jungle themed input fields */
@@ -172,3 +162,98 @@ form > * {
   padding-right: 1rem;
   width: 1rem;
 }
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn {
+  display: flex;
+  padding: 10px 20px;
+  margin: 0.5rem;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  height: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #59A84B;
+  color: #fff;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.btn-primary:hover {
+  background-color: #3e7521;
+}
+
+.btn-secondary {
+  background-color: #D7A548;
+  color: #fff;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.btn-secondary:hover {
+  background-color: #b07733;
+}
+
+
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #59A84B;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+label {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+
+button[type="submit"] {
+  padding: 10px 20px;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  background-color: #59A84B;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #3e7521;
+}
+input {  
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #333;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2) inset;
+}
+
+input:placeholder {
+  color: #333;
+}
+
+input:focus  {
+  outline: none;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5) inset;
+}
+
