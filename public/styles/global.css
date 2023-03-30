@@ -19,6 +19,18 @@ body {
   padding: 2rem;
 }
 
+footer {
+  background-color: #90ee90;
+  text-align: center;
+  padding: 0.1rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+
+}
+
+footer p {
+  color: #333;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
 /* Style the headings */
 
 h1 {
@@ -89,7 +101,6 @@ main {
   background-color: #d7e9cc;
   min-height: 70vh;
   padding: 1rem;
-  border-radius: 0 0 0.5rem 0.5rem;
   margin: auto;
   padding: 1.5rem;
 }
