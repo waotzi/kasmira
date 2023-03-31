@@ -6,7 +6,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "node  ./dist/server/entry.mjs",
+    "preview": " PORT=8085 node  ./dist/server/entry.mjs",
     "astro": "astro"
   },
   "dependencies": {
