@@ -25,16 +25,16 @@ export const post: APIRoute = async ({ request, redirect }) => {
     const password = formData.get("password") as string;
     const confirmPassword = formData.get("confirm-password") as string;
     const isRegister = confirmPassword !== null;
+    const userExists = await db.get(`users/${username}`).catch(() => null);
 
     if (isRegister) {
-    if (password !== confirmPassword) {
+      if (password !== confirmPassword) {
         const queryParams = new URLSearchParams({ error: 'password_mismatch' });
         const redirectUrl = '/signup?' + queryParams.toString();
         return redirect(redirectUrl, 307);
       }
       
       // Check if user already exists in database
-      const userExists = await db.get(`users/${username}`).catch(() => null);
 
       if (userExists) {
         const queryParams = new URLSearchParams({ error: 'username_taken' });
@@ -47,6 +47,12 @@ export const post: APIRoute = async ({ request, redirect }) => {
       await db.put(`users/${username}`, hashedPassword);
     }
     else {
+      if (!userExists) {
+        const queryParams = new URLSearchParams({ error: 'wrong_password' });
+        const redirectUrl = '/login?' + queryParams.toString();
+        return redirect(redirectUrl, 307);
+      }
+      
       const hashedPassword = await db.get(`users/${username}`);
       const isMatch = await Encrypt.comparePassword(password, hashedPassword);
       if (!isMatch) {

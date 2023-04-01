@@ -1,3 +1,23 @@
+:root {
+  --primary-color: #34495e;
+  --secondary-color: #2c3e50;
+  --accent-color: #165a2e;
+  --accent-hover-color: #8ebf73;
+  --background-color: #1abc9c;
+  --background-pattern: url('/patterns/pattern_1.jpg');
+  --body-font: 'Roboto', sans-serif;
+  --heading-font: 'Roboto Slab', serif;
+  --text-color: #444;
+  --text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  --header-bg-color: #34495e;
+  --footer-bg-color: #8bc34a;
+  --main-bg-color: #d7e9cc;
+  --form-input-bg-color: #fff;
+  --form-bg-color: #8bc34a;
+  --error-message-bg-color: #FF6347;
+  --text-white: #fff;
+}
+
 /* Add a leafy background pattern */
 body:before {
   content: '';
@@ -6,7 +26,7 @@ body:before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('/patterns/pattern_1.jpg');
+  background-image: var(--background-pattern);
   opacity: 0.4;
   z-index: -1;
 }
@@ -15,70 +35,45 @@ body {
   margin: auto;
   max-width: 800px;
   min-width: 320px;
-  background-color: #d7e9cc;
+  background-color: var(--background-color);
   padding: 2rem;
+  font-family: var(--body-font);
 }
-
-footer {
-  background-color: #90ee90;
-  text-align: center;
-  padding: 0.1rem;
-  border-radius: 0 0 0.5rem 0.5rem;
-
-}
-
-footer p {
-  color: #333;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-}
-/* Style the headings */
-
-h1 {
-  font-size: 2rem;
-  text-align: center;
-}
-
-h1, h2, h3 {
-  text-shadow: 1px 1px 0px #8ebf73;
-  font-family: 'Roboto Slab', serif;
-}
-
 
 /* Style the links */
 a {
-  color: #165a2e;
+  color: var(--accent-color);
   text-decoration: none;
-  border-bottom: 1px dotted #8ebf73;
+  border-bottom: 1px dotted var(--accent-hover-color);
 }
 
 a:hover {
-  color: #81c784;
+  color: var(--accent-hover-color);
   border-bottom: none;
 }
 
 /* Style the buttons */
-button {
+button, .btn {
   cursor: pointer;
-  background-color: #165a2e;
+  background-color: var(--primary-color);
   color: #fff;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
-  font-family: 'Roboto', sans-serif;
+  font-family: var(--body-font);
+  transition: background-color 0.2s;
 }
 
-button:hover {
-  background-color: #8ebf73;
+button:hover, .btn:hover {
+  background-color: var(--secondary-color);
 }
-
 
 /* Header */
 header {
-  background-color: #558b2f;
+  background-color: var(--primary-color);
   border-radius: 0.5rem 0.5rem 0 0;
   display: flex;
   justify-content: space-between;
-
 }
 
 header a {
@@ -88,129 +83,31 @@ header a {
   align-items: center;
   font-weight: bold;
 }
+
 header a:hover {
   color: #90EE90;
 }
 
-
-
 /* body */
-
 main {
-  background-color: #d7e9cc;
+  background-color: var(--main-bg-color);
   min-height: 70vh;
   padding: 1rem;
   margin: auto;
   padding: 1.5rem;
 }
+
+h1, h2, h3 {
+  text-shadow: var(--text-shadow);
+  font-family: var(--heading-font);
+}
+
 h1 {
-  font-size: 3rem;
-  font-weight: 800;
-  margin: 0;
+  font-size: 2rem;
+  text-align: center;
 }
 
 /* Jungle themed input fields */
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-form > * {
-  margin-bottom: 1rem;
-}
-
-
-.btn {
-  display: flex;
-  padding: 10px 20px;
-  margin: 0.5rem;
-  font-size: 16px;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 5px;
-  height: 1rem;
-  transition: background-color 0.3s ease;
-}
-
-.btn-primary {
-  background-color: #59A84B;
-  color: #fff;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.btn-primary:hover {
-  background-color: #3e7521;
-}
-
-.btn-secondary {
-  background-color: #D7A548;
-  color: #fff;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.btn-secondary:hover {
-  background-color: #b07733;
-}
-
-
-
-h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #59A84B;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-}
-
-label {
-  display: block;
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  color: #333;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-}
-
-
-button[type="submit"] {
-  padding: 10px 20px;
-  margin-top: 1rem;
-  font-size: 1.2rem;
-  background-color: #59A84B;
-  color: #fff;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button[type="submit"]:hover {
-  background-color: #3e7521;
-}
-
-
-input {
-  width: 100%;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 4px;
-  border: none;
-  background-color: rgba(255, 255, 255, 0.2);
-  color: #333;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2) inset;
-  transition: background-color 0.3s ease;
-}
-
-input:placeholder {
-  color: #333;
-}
-
-input:focus  {
-  outline: none;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5) inset;
-}
-
 
 nav {
   display: flex;
@@ -225,7 +122,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #FF6347;
+  background-color: var(--error-message-bg-color);
   color: #FFFFFF;
   font-size: 1.2rem;
   font-weight: bold;
@@ -237,6 +134,82 @@ nav {
 .flex {
   display: flex;
   align-items: center;
+}
+
+/* Jungle themed input fields */
+form {
+  color: var(--text-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  width: 300px;
+  background-color: var(--form-bg-color);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+form > * {
+  margin-bottom: 1rem;
+}
+
+label {
+  color: var(--text-white);
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+
+input {
+  background-color: var(--form-input-bg-color);
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem;
+  margin-bottom: 15px;
+  width: 100%;
+  color: var(--text-color);
+}
+
+
+input::placeholder {
+  color: var(--text-color);
+}
+
+input:focus  {
+  outline: none;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5) inset;
+}
+
+button,
+.btn {
+  background-color: var(--primary-color);
+  color: var(--text-white);
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover,
+.btn:hover {
+  background-color: var(--primary-hover-color);
+}
+
+/* Footer */
+footer {
+  background-color: var(--footer-bg-color);
+  text-align: center;
+  padding: 0.1rem;
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  color: var(--text-color);
+}
+
+footer p {
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
 
