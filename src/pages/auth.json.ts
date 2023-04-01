@@ -61,7 +61,7 @@ export const post: APIRoute = async ({ request, redirect }) => {
     localStorage.setItem('token', token);
 
     // Redirect to the index page
-    return redirect('/', 307);
+    return redirect(`/${username}`, 307);
     
     
   } 
