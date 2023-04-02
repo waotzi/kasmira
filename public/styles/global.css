@@ -16,6 +16,9 @@
   --form-bg-color: #8bc34a;
   --error-message-bg-color: #FF6347;
   --text-white: #fff;
+  --text-gray: #444;
+  --text-black: #000;
+
   --border-radius: 0.5rem;
 }
 
@@ -227,7 +230,6 @@ footer p {
 }
 .link-card {
   width: 100%;
-
   cursor: pointer;
   list-style: none;
   display: flex;
@@ -267,4 +269,17 @@ footer p {
 
 .modal img, .content img {
   border-radius: 5%;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 1.5rem;
+  color: var(--text-gray);
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  color: var(--text-black);
 }

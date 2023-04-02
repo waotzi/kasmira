@@ -13,7 +13,7 @@ const { href, title, key, image, id } = Astro.props;
 	
 <li class="link-card" tabindex={id}>
 	<div class="modal">
-		<InnerCard title={title} image={image} key={key} />
+		<InnerCard title={title} image={image} key={key} closeButton />
 	</div>
 	<div class="content">
 		<InnerCard title={title} image={image} key={key} />

@@ -3,14 +3,19 @@ export interface Props {
 	title: string;
 	image?: string;
 	key?: string;
+	closeButton?: boolean;
 }
-const { title, key, image } = Astro.props;
+const { title, key, image, closeButton } = Astro.props;
 ---
 <div onclick="copyToClipboard(event)">
 	<h2>
 		{title}
 		<span>&rarr;</span>
 	</h2>
+
+	{closeButton && (
+            <a href="" class="modal-close">&times;</a>
+      )}
 	<center>
 		<img src={image} />
 	</center>
