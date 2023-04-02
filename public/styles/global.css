@@ -16,6 +16,7 @@
   --form-bg-color: #8bc34a;
   --error-message-bg-color: #FF6347;
   --text-white: #fff;
+  --border-radius: 0.5rem;
 }
 
 /* Add a leafy background pattern */
@@ -52,6 +53,9 @@ a:hover {
   border-bottom: none;
 }
 
+.modal a {
+  color: var(--text-color);
+}
 /* Style the buttons */
 button, .btn {
   cursor: pointer;
@@ -71,7 +75,7 @@ button:hover, .btn:hover {
 /* Header */
 header {
   background-color: var(--primary-color);
-  border-radius: 0.5rem 0.5rem 0 0;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
   display: flex;
   justify-content: space-between;
 }
@@ -206,16 +210,56 @@ footer {
   padding: 0.1rem;
   border-radius: 0 0 var(--border-radius) var(--border-radius);
   color: var(--text-color);
+
 }
 
 footer p {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
+/* link cards and modals */
 
 .link-card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
   gap: 1rem;
   padding: 0;
+}
+.link-card {
+  width: 100%;
+
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  word-wrap: break-word;
+  padding: 0.25rem;
+}
+
+.link-card:not(:focus-within) .modal {
+  display: none;
+}
+
+.content {
+  width: 100%;
+  background-color: var(--text-white);
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%) scale(2);
+  background-color: var(--footer-bg-color);
+
+}
+.content, .modal {
+  overflow: hidden;
+  text-decoration: none;
+  border-radius: 0.35rem;
+  padding: 0 1rem 1rem 1rem;
+}
+
+.modal img, .content img {
+  border-radius: 5%;
 }

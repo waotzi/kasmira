@@ -17,11 +17,13 @@ function getUsername(): string | null {
       isLoggedIn = true;
     } catch (error) {
       // The token is invalid or has expired
-      console.error('Invalid or expired token:', error.message);
+      //console.error('Invalid or expired token:', error.message);
+      return null;
     }
   } else {
     // The user is not logged in
-    console.log('User is not logged in');
+    //console.log('User is not logged in');
+    return null;
   }
 
   return username

@@ -1,15 +1,14 @@
 ---
 import BaseTemplate from "../components/templates/BaseTemplate.astro";
 import getUsername from "../composables/session";
-import CryptoCard from "../components/atoms/CryptoCard.astro";
+import CryptoCard from "../components/molecules/CryptoCard.astro";
+// @ts-ignore
 import QRCode from 'qrcode';
 import db from "../db"
 
-const username = getUsername()
+const loggedInUser = getUsername()
 
-if (username === null)
-    return Astro.redirect('/')
-
+const username = Astro.url.pathname.split('/')[1]
 // Fetch the keys from the LevelDB
 const fetchKeys = async () => {
   try {
@@ -22,7 +21,7 @@ const fetchKeys = async () => {
 };
 
 // Create a QR code image
-const createQRCode = async (text) => {
+const createQRCode = async (text: string) => {
   try {
     const qrCode = await QRCode.toDataURL(text);
     return qrCode;
@@ -33,7 +32,7 @@ const createQRCode = async (text) => {
 
 // Fetch keys and generate QR codes
 const keys = await fetchKeys();
-const keysWithQRCodes = await Promise.all(keys.map(async key => {
+const keysWithQRCodes = await Promise.all(keys.map(async (key: any) => {
   const qrCode = await createQRCode(key.key);
   return { ...key, qrCode };
 }));
@@ -46,14 +45,16 @@ console.log(keys)
 <BaseTemplate>
     <div class="profile">
       <h1>{username}'s Profile</h1>
-      <form class="public-address-form" action="/crypto.json" method="POST">
-        <input type="hidden" name="username" value={username}>
-        <label for="crypto-name">Crypto Name:</label>
-        <input type="text" id="crypto-name" name="crypto-name" required>
-        <label for="public-address">Public Crypto Address:</label>
-        <input type="text" id="public-address" name="public-address" required>
-        <button type="submit">Add</button>
-      </form>
+      { loggedInUser &&
+        <form class="public-address-form" action="/crypto.json" method="POST">
+          <input type="hidden" name="username" value={loggedInUser}>
+          <label for="crypto-name">Crypto Name:</label>
+          <input type="text" id="crypto-name" name="crypto-name" required>
+          <label for="public-address">Public Crypto Address:</label>
+          <input type="text" id="public-address" name="public-address" required>
+          <button type="submit">Add</button>
+        </form>
+      }
     </div>
     <br/>
     <div class="cards-container">

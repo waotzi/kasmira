@@ -1,0 +1,46 @@
+---
+export interface Props {
+	title: string;
+	image?: string;
+	key?: string;
+}
+const { title, key, image } = Astro.props;
+---
+<a onclick="copyToClipboard(event)">
+	<h2>
+		{title}
+		<span>&rarr;</span>
+	</h2>
+	<center>
+		<img src={image} />
+	</center>
+	<span class="copy-key">{key}</span>
+</a>
+
+<script is:inline>
+	function copyToClipboard(event) {
+	  event.stopPropagation(); // Prevent triggering other click events
+	  const keyElement = event.currentTarget.querySelector('.copy-key');
+	  const key = keyElement.innerHTML
+  
+	  // Highlight the key text within the copy-key span
+	  const range = document.createRange();
+	  range.selectNodeContents(keyElement);
+	  const selection = window.getSelection();
+	  selection.removeAllRanges();
+	  selection.addRange(range);
+  
+	  navigator.clipboard.writeText(key).then(
+		function () {
+		  console.log("Copied key to clipboard:", key);
+		  // You can add any additional feedback or UI changes here, such as showing a tooltip
+		},
+		function (err) {
+		  console.error("Failed to copy key to clipboard:", err);
+		}
+	  );
+	}
+  </script>
+
+<style>
+</style>
