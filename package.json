@@ -4,9 +4,10 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "start": "astro dev",
+    "start": "npm run build && node dist/server/entry.mjs",
     "build": "astro build",
-    "preview": "node  ./dist/server/entry.mjs",
+    "server": "node server/server.mjs",
+    "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
