@@ -4,9 +4,9 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "start": "npm run build && nnpm run server",
+    "start": "npm run build && npm run server",
     "build": "astro build",
-    "server": "node dist/server/entry.mjs",
+    "server": "HOST=0.0.0.0 PORT=3600 node ./dist/server/entry.mjs",
     "preview": "astro preview",
     "astro": "astro"
   },
