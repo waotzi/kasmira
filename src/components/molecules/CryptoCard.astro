@@ -1,14 +1,13 @@
 ---
-import InnerCard from '../atoms/InnerCard.astro';
+import InnerCard from '@atoms/InnerCard.astro';
 export interface Props {
 	title: string;
 	key: string;
-	href?: string;
 	image?: string;
 	id: number;
 }
 
-const { href, title, key, image, id } = Astro.props;
+const { title, key, image, id } = Astro.props;
 ---
 	
 <li class="link-card" tabindex={id}>

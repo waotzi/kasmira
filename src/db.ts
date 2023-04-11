@@ -1,5 +1,7 @@
-import { Level } from 'level'
+import { UserDocument } from './models'
 
-const db = new Level('db');
+import PouchDB from 'pouchdb'
+
+const db = new PouchDB<UserDocument>('db');
 
 export default db

@@ -1,10 +1,11 @@
 import { APIRoute } from "astro";
 import db from "../db"
+import { UserDocument } from '../models'
+
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
 const secretKey = import.meta.env.JWT_SECRET_KEY;
-
 
 export const Encrypt = {
   cryptPassword: (password: string) =>
@@ -44,7 +45,12 @@ export const post: APIRoute = async ({ request, redirect }) => {
       
       // Hash the password and store the user in the database
       const hashedPassword =  await Encrypt.cryptPassword(password);
-      await db.put(`users/${username}`, hashedPassword);
+      // create a new document
+      const doc: UserDocument = {
+        _id: `/users/${username}`,
+        hashedPassword: hashedPassword
+      };
+      await db.put(doc);
     }
     else {
       if (!userExists) {
@@ -53,13 +59,19 @@ export const post: APIRoute = async ({ request, redirect }) => {
         return redirect(redirectUrl, 307);
       }
       
-      const hashedPassword = await db.get(`users/${username}`);
-      const isMatch = await Encrypt.comparePassword(password, hashedPassword);
+     
+      // retrieve a document from the database
+      const userDoc = await db.get(`/users/${username}`);
+
+      // access the hashedPassword property
+      const isMatch = await Encrypt.comparePassword(password, userDoc.hashedPassword);
+
       if (!isMatch) {
         const queryParams = new URLSearchParams({ error: 'wrong_password' });
         const redirectUrl = '/login?' + queryParams.toString();
         return redirect(redirectUrl, 307);
       }
+      
     }
     // Set the jwt
 

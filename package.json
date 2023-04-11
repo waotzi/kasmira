@@ -12,13 +12,14 @@
   },
   "dependencies": {
     "@astrojs/node": "^5.1.0",
+    "@types/pouchdb": "^6.4.0",
     "astro": "^2.1.8",
     "aws-sdk": "^2.1346.0",
     "bcrypt": "^5.1.0",
     "jsonwebtoken": "^9.0.0",
-    "level": "^8.0.0",
     "mock-aws-s3": "^4.0.2",
     "nock": "^13.3.0",
+    "pouchdb": "^8.0.1",
     "qrcode": "^1.5.1"
   },
   "devDependencies": {

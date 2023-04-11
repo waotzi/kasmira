@@ -4,21 +4,30 @@ import getUsername from "../composables/session";
 import CryptoCard from "../components/molecules/CryptoCard.astro";
 // @ts-ignore
 import QRCode from 'qrcode';
+import { CryptoKeys, UserDocument } from '../models'
 import db from "../db"
 
 const loggedInUser = getUsername()
 
 const username = Astro.url.pathname.split('/')[1]
+console.log(username)
 // Fetch the keys from the LevelDB
-const fetchKeys = async () => {
-  try {
-    const cryptoKeyData = await db.get(`/users/${username}/crypto`);
-    return JSON.parse(cryptoKeyData);
-  } catch (error) {
+
+
+let crypto: CryptoKeys[] = [];
+
+try {
+  const userDoc = await db.get<UserDocument>(`/users/${username}`);
+  crypto = userDoc.crypto || [];
+  // do something with the crypto array
+} catch (error) {
+  if (error.status === 404) {
+    // handle the case where the document does not exist
+  } else {
     console.error(error);
-    return [];
+    // handle other errors
   }
-};
+}
 
 // Create a QR code image
 const createQRCode = async (text: string) => {
@@ -31,13 +40,12 @@ const createQRCode = async (text: string) => {
 };
 
 // Fetch keys and generate QR codes
-const keys = await fetchKeys();
-const keysWithQRCodes = await Promise.all(keys.map(async (key: any) => {
+const keysWithQRCodes = await Promise.all(crypto.map(async (key: any) => {
   const qrCode = await createQRCode(key.key);
   return { ...key, qrCode };
 }));
 
-console.log(keys)
+console.log(crypto)
 
 
 ---
