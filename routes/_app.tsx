@@ -2,7 +2,7 @@
 
 import { asset, Head } from "$fresh/runtime.ts";
 import { AppProps } from "$fresh/src/server/types.ts";
-
+import Header from "../components/Header.tsx";
 
 export default function App({ Component }: AppProps) {
   return (
@@ -17,19 +17,7 @@ export default function App({ Component }: AppProps) {
         <script defer data-domain="kasmira.net" src="/js/script.js"></script>
       </Head>
       <body>
-        <header>
-            <a href="/" >
-            <img width="48" src="/logo.png"/>
-            <h3>Kasmira</h3>
-            &nbsp;&nbsp;&nbsp;
-            </a>
-            <nav>
-            <div class="flex">
-                <a href="/signup" class="btn btn-secondary">Sign Up</a>
-                <a href="/login" class="btn btn-primary">Log In</a>
-            </div>
-            </nav>
-        </header>
+        <Header/>
         <main>
             <Component />
         </main>

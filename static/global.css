@@ -1,6 +1,6 @@
 :root {
-  --primary-color: #34495e;
-  --secondary-color: #2c3e50;
+  --primary-color: #694521;
+  --secondary-color: #6f925a;
   --accent-color: #165a2e;
   --accent-hover-color: #8ebf73;
   --background-color: #1abc9c;
@@ -9,8 +9,7 @@
   --heading-font: 'Roboto Slab', serif;
   --text-color: #444;
   --text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-  --header-bg-color: #34495e;
-  --footer-bg-color: #8bc34a;
+  --footer-bg-color: #694521;
   --main-bg-color: #d7e9cc;
   --form-input-bg-color: #fff;
   --form-bg-color: #8bc34a;
@@ -18,7 +17,6 @@
   --text-white: #fff;
   --text-gray: #444;
   --text-black: #000;
-
   --border-radius: 0.5rem;
 }
 
@@ -63,7 +61,7 @@ a:hover {
 button, .btn {
   cursor: pointer;
   background-color: var(--primary-color);
-  color: #fff;
+  color: var(--text-white);
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
@@ -84,7 +82,7 @@ header {
 }
 
 header a {
-  color: #fff;
+  color: var(--text-white);
   border-bottom: none;
   display: flex;
   align-items: center;
@@ -92,7 +90,7 @@ header a {
 }
 
 header a:hover {
-  color: #90EE90;
+  color: var(--secondary-color);
 }
 
 /* body */
@@ -114,6 +112,11 @@ h1 {
   text-align: center;
 }
 
+h2 {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
 /* Jungle themed input fields */
 
 nav {
@@ -121,8 +124,8 @@ nav {
   justify-content: space-between;
   align-items: center;
   font-size: 18px;
-  color: #fff;
-  text-shadow: 1px 1px #000;
+  color: var(--text-white);
+  text-shadow: 1px 1px var(--text-black);
 }
 
 .error-message {
@@ -130,7 +133,7 @@ nav {
   align-items: center;
   justify-content: center;
   background-color: var(--error-message-bg-color);
-  color: #FFFFFF;
+  color: var(--text-white);
   font-size: 1.2rem;
   font-weight: bold;
   padding: 10px;
@@ -212,8 +215,10 @@ footer {
   text-align: center;
   padding: 0.1rem;
   border-radius: 0 0 var(--border-radius) var(--border-radius);
-  color: var(--text-color);
-
+  color: var(--text-white);
+}
+footer a {
+  color: var(--text-white);
 }
 
 footer p {
@@ -294,7 +299,7 @@ summary {
 .subtitle {
     display: block;
     font-size: 1.5rem;
-    color: #333;
+    color: var(--text-gray);
     text-align: center;
     margin-bottom: 2rem;
   }
@@ -329,8 +334,8 @@ summary {
   display: flex;
   align-items: center;
   font-size: 18px;
-  color: #fff;
-  text-shadow: 1px 1px #000;
+  color: var(--text-white);
+  text-shadow: 1px 1px var(--text-black);
 }
 
 .login-page {
