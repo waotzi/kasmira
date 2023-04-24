@@ -16,27 +16,6 @@
   --error-message-bg-color: #FF6347;
 }
 
-/* Add a leafy background pattern */
-body:before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: var(--background-pattern);
-  opacity: 0.4;
-  z-index: -1;
-}
-
-body {
-  margin: auto;
-  max-width: 800px;
-  min-width: 320px;
-  background-color: var(--background-color);
-  padding: 2rem;
-  font-family: var(--body-font);
-}
 
 /* Style the links */
 a {
@@ -75,10 +54,11 @@ header {
   background-color: var(--primary-color);
   border-radius: var(--border-radius) var(--border-radius) 0 0;
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
   margin: auto;
-
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  padding: 1rem 0;
 }
 
 header a {
@@ -97,10 +77,60 @@ header .btn:hover {
   background-color: var(--primary-color);
 }
 
+
+/* Footer */
+footer {
+  background-color: var(--primary-color);
+  text-align: center;
+  padding: 0.1rem;
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  color: var(--text-white);
+}
+footer a {
+  color: var(--text-white);
+}
+
+footer p {
+  text-shadow: var(--text-shadow);
+}
+
 /* body */
+body:before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: var(--background-pattern);
+  opacity: 0.4;
+  z-index: -1;
+}
+
+body {
+  margin: auto;
+  max-width: 800px;
+  min-width: 320px;
+  background-color: var(--background-color);
+  font-family: var(--body-font);
+  padding: 2rem;
+}
+
+
 main {
   background-color: var(--main-bg-color);
   margin: auto;
+}
+
+
+@media (max-width: 420px) {
+  body {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  header, footer {
+    border-radius: 0;
+  }
 }
 
 h1, h2, h3 {
@@ -120,15 +150,6 @@ h2 {
   text-align: center;
 }
 
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 18px;
-  color: var(--text-white);
-  text-shadow: var(--text-shadow);
-}
 
 .error-message {
   display: flex;
@@ -191,30 +212,11 @@ input::placeholder {
 }
 
 
-/* Footer */
-footer {
-  background-color: var(--primary-color);
-  text-align: center;
-  padding: 0.1rem;
-  border-radius: 0 0 var(--border-radius) var(--border-radius);
-  color: var(--text-white);
-}
-footer a {
-  color: var(--text-white);
-}
-
-footer p {
-  text-shadow: var(--text-shadow);
-}
-
-/* insructions */
+/* instructions */
 
 summary {
   text-align: center;
   cursor: pointer;
-}
-.cta {
-  text-align: center;
 }
 .subtitle {
   display: block;
@@ -229,5 +231,24 @@ summary {
   background-color: white;
   padding: 1rem;
   border-radius: 0.4rem;
-  margin: 2rem 5rem;
+  max-width: 520px;
+  margin: 2rem auto;
+}
+
+/* general */
+
+.text-center {
+  text-align: center;
+}
+
+
+
+.rot-20 {
+  padding-bottom: 0.1rem;
+  transform: rotate(20deg);
+}
+
+.rot-340 {
+  transform: rotate(340deg) scale(-1, 1);
+  padding-bottom: 0.1rem;
 }

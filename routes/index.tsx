@@ -16,7 +16,7 @@ export default function Home() {
           <summary>Read More</summary>
           <p>Whether you're a musician, artist, writer, or anyone with a creative vision, Kasmira makes it easy to share your work and engage with your community. You can sign up for Kasmira and create your own personal page that you can easily embed into your own website or share on social media.</p>
           <p>We also provide a variety of widgets and other tools that make it easy to accept donations and support your projects. With Kasmira, you can focus on your creative work and leave the fundraising to us. So why wait? Sign up for Kasmira today and start turning your creative ideas into reality!</p>
-          <div class="cta">
+          <div class="text-center">
             <a href="/signup" class="button">Sign Up Now</a>
           </div>
         </details>
