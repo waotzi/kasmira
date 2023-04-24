@@ -6,7 +6,8 @@ export default function Home() {
       <Head>
         <title>Fresh App</title>
       </Head>
-      <h1>Welcome to <span class="text-gradient">Kasmira</span></h1>
+      <br/>
+      <h1>Welcome to <b>Kasmira</b></h1>
       <div class="subtitle">Fund Your Creative Projects and Ideas with Kasmira</div>
 
       <div class="instructions">
@@ -23,6 +24,8 @@ export default function Home() {
       <div class="projects-section">
         <h2>Explore Projects and Users on Kasmira</h2>
       </div>
+      <br/>
+      <br/>
     </>
   );
 }
