@@ -2,7 +2,7 @@
 
 import { asset, Head } from "$fresh/runtime.ts";
 import { AppProps } from "$fresh/src/server/types.ts";
-import Header from "../components/Header.tsx";
+import Header from "../islands/Header.tsx";
 
 export default function App({ Component }: AppProps) {
   return (

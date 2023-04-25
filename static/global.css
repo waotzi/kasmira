@@ -60,6 +60,7 @@ header {
   width: 100%;
   align-items: center;
   padding: 1rem 0;
+  color: var(--text-white);
 }
 
 header a {
@@ -167,7 +168,6 @@ h2 {
   background-color: var(--text-alert);
   color: var(--text-white);
   font-weight: bold;
-  font-size: 1.4rem;
   padding: 0.5rem;
   width: 100%;
 }

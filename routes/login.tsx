@@ -6,21 +6,16 @@ export default function Login(props: PageProps) {
 
   return (
     <>
-     {showError && (
-            <p className="error-message">Wrong username or password.</p>
-          )}
-        <AuthForm title="Login" actionUrl="/api/login">
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" required/>
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" required/>
-            
-            <button type="submit" class="login-btn">Login</button>
-            
-        </AuthForm>      
-        
-       
-
+      {showError && (
+        <p className="error-message">Wrong username or password.</p>
+        )}
+      <AuthForm title="Login" actionUrl="/api/login">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" required/>
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required/>
+          <button type="submit">Login</button>
+      </AuthForm>      
     </>
   );
 }
