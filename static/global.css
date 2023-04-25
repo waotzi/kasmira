@@ -11,9 +11,10 @@
   --text-white: #fff;
   --text-gray: #444;
   --text-black: #000;
+  --text-alert: #FF6347;
+
   --border-radius: 0.5rem;
   --font-weight-bold: 700;
-  --error-message-bg-color: #FF6347;
 }
 
 
@@ -162,16 +163,13 @@ h2 {
 
 
 .error-message {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--error-message-bg-color);
+  text-align: center;
+  background-color: var(--text-alert);
   color: var(--text-white);
-  font-size: 1.2rem;
   font-weight: bold;
-  padding: 10px;
-  margin-bottom: 20px;
-  border-radius: var(--border-radius);
+  font-size: 1.4rem;
+  padding: 0.5rem;
+  width: 100%;
 }
 
 .flex {

@@ -23,9 +23,12 @@ export const handler: Handlers = {
         headers,
       });
     } else {
-      return new Response(null, {
-        status: 403,
-      });
+        const headers = new Headers();
+        headers.set("location", "/login?error=invalid_credentials");
+        return new Response(null, {
+            status: 303,
+            headers,
+        });
     }
   },
 };
