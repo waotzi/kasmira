@@ -8,9 +8,8 @@ export const handler: Handlers = {
     const form = await req.formData();
     const username = form.get("username") as string;
     const password = form.get("password") as string;
-
     const users = await db.find({selector: { username, password }}) 
-
+    console.log(users, db)
     if (users.docs.length === 1) {
       const user = users.docs[0]
       const userObj = user as unknown as User; // Type assertion
@@ -19,6 +18,7 @@ export const handler: Handlers = {
       userObj.session = newSession
       await db.put(userObj); 
       setCookie(headers, {
+
         name: "auth",
         value: newSession,
         maxAge: 120,

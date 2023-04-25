@@ -30,7 +30,7 @@ export const handler: Handlers = {
     // Generate a unique session token
     const session = crypto.randomUUID();
 
-    const newUser: User = { _id: username, username, password, session, crypto: {} };
+    const newUser: User = { _id: username, username, password, session, crypto: [] };
     await db.put(newUser);
 
 

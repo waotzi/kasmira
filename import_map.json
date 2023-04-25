@@ -9,6 +9,7 @@
     "twind": "https://esm.sh/twind@0.16.19",
     "twind/": "https://esm.sh/twind@0.16.19/",
     "std/": "https://deno.land/std@0.160.0/",
-    "pouchdb/": "https://deno.land/x/pouchdb_deno@2.1.0-PouchDB+7.3.0/"
+    "pouchdb/": "https://deno.land/x/pouchdb_deno@2.1.0-PouchDB+7.3.0/",
+    "qrcode/": "https://deno.land/x/qrcode@v2.0.0/"
   }
 }
