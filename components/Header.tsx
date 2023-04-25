@@ -24,6 +24,7 @@ export default function Counter({isAllowed} : HeaderProps ) {
             {isAllowed ?
                 <div>
                     logged in
+                    <a href="/logout">Logout</a>
                 </div>
             :
             <div class="flex">

@@ -4,7 +4,7 @@ import AuthForm from "../components/AuthForm.tsx";
 export default function Login(props: PageProps) {
   return (
     <>
-        <AuthForm title="Login" actionUrl="/auth.json">
+        <AuthForm title="Login" actionUrl="/api/login">
             <label for="username">Username</label>
             <input type="text" id="username" name="username" required/>
             <label for="password">Password</label>
